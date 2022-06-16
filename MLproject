@@ -1,0 +1,15 @@
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      training_data: path
+      test_data: path
+      label_col: string
+      ntrees:
+        type: int
+        default: 200
+      lr:
+        type: float
+        default: 0.005
+    command: python main.py --training_data {training_data} --test_data {test_data} --label_col {label_col} --ntrees {ntrees} --lr {lr}
